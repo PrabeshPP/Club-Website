@@ -1,0 +1,26 @@
+{%extends 'base.html' %}
+
+{%block content%}
+    <div class="resourcesMainBox">
+        {%if user.is_authenticated%}
+        <p>Hi!{{user.name}}. Welcome to the DePauw Developers Club.</p>
+        {%endif%}
+        {%for resource in data%}
+            <div class="resourceBox">
+                    {%load static%}
+                    <img src="/{{resource.imageURL}}" alt={{resource.title}} class="resourceImageBox"/>
+                    <div class="resourceTitleBox">
+                        {{resource.title}}
+                    </div>
+                    <div class="roadmapBox">
+                        <a href={{resource.resourcesURL}} class="roadmap">
+                            Roadmap
+                        </a>
+                        <a href="{%url 'resource_detail' resource.id%}" class="moreBox">
+                            View More
+                        </a>
+                    </div>
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}

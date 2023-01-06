@@ -1,0 +1,14 @@
+{%extends 'base.html' %}
+
+{%block content%}
+    <div class="aboutDetailPageMainBox">
+        <div class="aboutDetailImageBox">
+            <img src="/media/{{executive.image}}" alt={{executive.name}} class="aboutImageBox" />
+        </div>
+        <div class="aboutDetailDescriptionBox">
+            <div class="aboutName">{{executive.name}}</div>
+            <div class="aboutRole">{{executive.role}}</div>
+            <div class="aboutDescription">{{executive.description}}</div>
+        </div>
+    </div>
+{%endblock%}

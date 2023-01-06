@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div  class="aboutMainBox">
+    {%for executive in executives%}
+        <a href="/about/{{executive.id}}" class="executiveBox">
+            <img src="/media/{{executive.image}}" alt={{executive.name}} class="executiveImage"/>
+            <div class="executiveName">
+                {{executive.name}}
+            </div>
+            <div class="executiveRole">
+                {{executive.role}}
+            </div>
+        </a>
+    {%endfor%}
+</div>
+{%endblock%}

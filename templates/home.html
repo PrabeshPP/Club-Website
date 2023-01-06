@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%block content%}
+    <div class="homeMainBox">
+        <div class="homeLeftBox">
+            <div class="homeLeftHeadingBox">
+                <h2>Welcome to DePauw's Developers Club</h2>
+            </div>
+            <div class="homeLeftContentBox">
+                <p>Developers Club is one of the
+                clubs of DePauws University established for the DePauw Students and by the DePauw Students.
+                The Club was founded by two pople with the motive of helping other students to build skills required in Computer Science.
+            </p>
+            </div>
+            <div class="homeLeftQuoteBox">
+                <h3><q>Established to Promote Digital Literacy in College</q></h3>
+            </div>
+        </div>
+        <div class="homeRightBox">
+            {%load static%}
+            <img src="{%static '/images/dev.svg' %}" alt="DePauw Tigers" class="img"/>
+        </div>
+    </div>
+{% endblock %}

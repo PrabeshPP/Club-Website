@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block content%}
+    <div class="loginMainBox">
+        <form class="formBox" method="post" action="{%url 'login'%}">
+            {%csrf_token%}
+            <div class="userNameBox">
+                <label>Email</label>
+                <input  name="username" type="text" id="id_username" required/>         
+            </div>
+            <div class="passwordBox">
+                <label>Password</label>
+                <input name="password" type="password" id="id_password" required/>
+            </div>
+            {% if form.non_field_errors %} {% for error in form.non_field_errors %}
+                    <p class="error">
+                        Username or Password did not match.
+                    </p>
+            {% endfor %} {% endif %}
+            <button type="submit" class="loginButton">Login</button>
+            <p style="padding-top: 10px;">Don't have an account ? <a href="/signup" style="cursor: pointer;">SignUp</a> </p>
+        </form>
+    </div>
+{%endblock%}
